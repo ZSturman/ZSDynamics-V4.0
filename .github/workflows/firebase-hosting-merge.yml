@@ -1,3 +1,4 @@
+# firebase-hosting-merge.yml
 name: Deploy to Firebase Hosting on merge
 on:
   push:
@@ -12,6 +13,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Cache Node.js modules
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
@@ -19,6 +28,14 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+
+      - name: Cache Next.js build
+        uses: actions/cache@v3
+        with:
+          path: .next/cache
+          key: ${{ runner.os }}-next-build-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-next-build-
 
       - name: Build Next.js app
         run: npm run build
@@ -30,4 +47,3 @@ jobs:
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_ZACHARY_STURMAN_PORTFOLIO }}
           channelId: live
           projectId: zachary-sturman-portfolio
-
