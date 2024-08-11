@@ -1,9 +1,5 @@
 export const portfolioTabs: PortfolioTab[] = [
   {
-    label: 'All',
-    value: 'all',
-  },
-  {
     label: 'Apps',
     value: 'app',
   },

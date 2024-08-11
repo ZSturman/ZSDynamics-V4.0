@@ -2,42 +2,37 @@
 import { useState } from "react";
 import PortfolioItems from "@/components/PortfolioItems";
 import portfolioItems from "@/site/portfolio-items";
+import { motion } from "framer-motion";
+import { portfolioTabs } from "@/site/portfolio-tabs";
 
 
-type TabsProps = {
-  tabs: PortfolioTab[];
-}
-
-export default function Tabs({ tabs }: TabsProps) {
-  const [activeTab, setActiveTab] = useState(tabs[0].value);
+export default function Tabs() {
+  const [activeTab, setActiveTab] = useState(portfolioTabs[0].value);
 
   const handleTabClick = (value: string) => {
     setActiveTab(value);
   };
-
-  const activeTabData = tabs.find(tab => tab.value === activeTab)
   
-  const filteredItems = activeTab === 'all'
-    ? portfolioItems
-    : portfolioItems.filter(item => item.type.includes(activeTab));
+  const filteredItems = portfolioItems.filter(item => item.type.includes(activeTab));
 
   return (
-    <div>
-      <div className="flex space-x-4">
-        {tabs.map((tab) => (
-          <button
+    <div className="m-10">
+      <div className="flex flex-row justify-center gap-8 mb-4">
+        {portfolioTabs.map((tab) => (
+          <motion.button
             key={tab.value}
-            className={`px-4 py-2 rounded ${
-              activeTab === tab.value ? "bg-blue-500 text-white" : "bg-gray-200"
+
+            className={`px-4 py-2 text-dark-shade hover:opacity-80 ${
+              activeTab === tab.value ? " border-b-2" : ""
             }`}
             onClick={() => handleTabClick(tab.value)}
           >
             {tab.label}
-          </button>
+          </motion.button>
         ))}
       </div>
-      <div className="mt-4">
-        <PortfolioItems portfolioItems={filteredItems} />
+      <div >
+        <PortfolioItems portfolioItems={filteredItems}/>
       </div>
     </div>
   );

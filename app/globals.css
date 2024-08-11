@@ -3,31 +3,62 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --lightest-shade: #fbfafb;
+  --lighter-shade: #a8b5cf;
+  --light-shade: #c2cee5;
+  --light-accent: #164dc1;
+  
+  --main-brand: #828da2;
+
+  --dark-accent: #0d3282;
+  --dark-shade: #2a394e;
+  --darker-shade: #1e2837;
+  --darkest-shade: #101721;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+  background: transparent;
+}
+
+.dark {
+  --lightest-shade: #101721;
+  --lighter-shade: #1e2837;
+  --light-shade: #2a394e;
+  --light-accent: #0d3282;
+
+  --dark-accent: #4971c9;
+  --dark-shade: #c2cee5;
+  --darker-shade: #a8b5cf;
+  --darkest-shade: #fbfafb;
+
+}
+
+
+
+
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border-left-color: #09f;
+
+  animation: spin 1s ease infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
   }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  100% {
+    transform: rotate(360deg);
   }
 }
