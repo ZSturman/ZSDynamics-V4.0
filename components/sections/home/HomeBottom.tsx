@@ -17,7 +17,7 @@ const HomeBottom = () => {
         {/* Front and Center Item */}
         <motion.div
           
-          className="w-full md:w-2/3 p-4 "
+          className="w-full  p-4 "
         >
           <ExportedImage
             src={selectedItems[0].image}
@@ -43,7 +43,7 @@ const HomeBottom = () => {
         </motion.div>
 
         {/* Two Smaller Items Below */}
-        <motion.div className="flex space-x-4 w-full md:w-2/3">
+        <motion.div className="flex space-x-4 w-full ">
           {selectedItems.slice(1).map((item, index) => (
             <motion.div
               key={index}

@@ -51,13 +51,14 @@ const SectionTop: React.FC<SectionTopProps> = ({ section }) => {
           initial={{ opacity: 0, y: -100, scale: 2 }}
           animate={{ opacity: 0.5, y: 0, scale: 1 }}
           transition={{ delay: 1.5 }}
-          style={{ width: "100px" }} // Fixed width for buttons
+          
         >
           {section.prev && (
             <motion.button
               className="opacity-50 text-xl hover:opacity-90 flex items-center gap-2"
               onClick={handleLeftClick}
               whileHover={{ scale: 1.1 }}
+          
             >
               <FaAngleLeft />
               {section.prevTop}
@@ -69,7 +70,7 @@ const SectionTop: React.FC<SectionTopProps> = ({ section }) => {
           fromDirection="left"
           delay={0.15}
           amount={1}
-          className="flex-grow flex items-center justify-center pb-20 max-w-[1100px]"
+          className=" flex items-center justify-center pb-20 max-w-[1100px]"
         >
           <motion.div style={{ y }}>{section.contentTop()}</motion.div>
         </InViewContainer>
@@ -79,13 +80,14 @@ const SectionTop: React.FC<SectionTopProps> = ({ section }) => {
           initial={{ opacity: 0, y: -100, scale: 2 }}
           animate={{ opacity: 0.5, y: 0, scale: 1 }}
           transition={{ delay: 1.5 }}
-          style={{ width: "100px" }} // Fixed width for buttons
+         
         >
           {section.next && (
             <motion.button
               className="opacity-50 text-xl hover:opacity-90 flex items-center gap-2"
               onClick={handleRightClick}
               whileHover={{ scale: 1.1 }}
+              
             >
               {section.nextTop}
               <FaAngleRight />

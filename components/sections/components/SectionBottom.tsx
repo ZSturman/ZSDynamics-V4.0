@@ -67,7 +67,7 @@ const SectionBottom: React.FC<SectionBottomProps> = ({ section }) => {
               className="opacity-50 text-xl hover:opacity-90 flex items-center gap-2"
               onClick={handleLeftClick}
               whileHover={{ scale: 1.1 }}
-              style={{ width: "100px" }} // Fixed width for buttons
+             
             >
               <FaAngleLeft />
               {section.prevBottom}
@@ -75,7 +75,7 @@ const SectionBottom: React.FC<SectionBottomProps> = ({ section }) => {
           )}
         </div>
 
-        <div className="flex flex-grow items-center justify-center pb-20 max-w-[1100px]">
+        <div className="flex flex-grow items-center justify-center max-w-[1100px]">
           <motion.div style={{ y }}>{section.contentBottom()}</motion.div>
         </div>
 
@@ -85,7 +85,7 @@ const SectionBottom: React.FC<SectionBottomProps> = ({ section }) => {
               className="opacity-50 text-xl hover:opacity-90 flex items-center gap-2"
               onClick={handleRightClick}
               whileHover={{ scale: 1.1 }}
-              style={{ width: "100px" }} // Fixed width for buttons
+             
             >
               {section.nextBottom}
               <FaAngleRight />

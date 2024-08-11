@@ -17,3 +17,9 @@ type PortfolioItem = {
   dateCompleted: string; // Date the project was completed
   role: string; // The developer's role in the project (e.g., "Frontend Developer")
 };
+
+type SocialMediaLink = {
+  title: string;
+  href: string;
+  icon: React.ComponentType;
+};

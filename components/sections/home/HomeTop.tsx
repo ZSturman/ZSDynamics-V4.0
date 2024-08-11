@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import socialMediaLinks from "../../social-links";
+import socialMediaLinks from "@/components/social-links";
 import {
   jobTitleVariant,
   nameVariant,
@@ -53,7 +53,7 @@ const HomeTop = () => {
       </motion.div>
 
 
-<SocialMediaLinks />
+<SocialMediaLinks links={socialMediaLinks}/>
 
 
 

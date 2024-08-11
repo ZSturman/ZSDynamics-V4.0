@@ -1,14 +1,13 @@
 import React from "react";
 import InViewContainer from "../../animations/InViewContainer";
-import ExportedImage from "next-image-export-optimizer";
 import { motion } from "framer-motion";
 import { subtleVariant } from "@/components/animations/variants";
-import socialMediaLinks from "@/components/social-links";
 import SocialMediaLinks from "@/components/SocialMediaLinks";
+import socialMediaLinks from "@/components/all-social-links"
 
 const ContactBottom = () => {
   return (
-    <div>
+    <div >
     <InViewContainer fromDirection="top" className="flex flex-col gap-10 ">
         <motion.h1
           className="text-3xl sm:text-2xl md:text-3xl sm:tracking-widest mb-8"
@@ -60,7 +59,13 @@ const ContactBottom = () => {
         >
           I look forward to hearing from you!
         </motion.p>
-<SocialMediaLinks />
+
+     <div className="lg:max-w-[500px] flex items-center justify-center">
+
+
+<SocialMediaLinks links={socialMediaLinks}/>
+     </div>
+ 
 
 
 
