@@ -1,11 +1,11 @@
 "use client"
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 
 // Create a context for theme management
 const ThemeContext = createContext({ theme: '', toggleTheme: () => {},  windowSize: { width: 0, height: 0 } });
 
 // Custom hook to use the theme context
-export const useTheme = () => useContext(ThemeContext);
+const useTheme = () => useContext(ThemeContext);
 
 type Func = (...args: any[]) => void;
 
@@ -21,7 +21,7 @@ function debounce(fn: Func, ms: number): Func {
 
 
 // ThemeProvider component to wrap the application or component tree
-export const ThemeProvider = ({ children }: {children: React.ReactNode}) => {
+const ThemeProvider = ({ children }: {children: React.ReactNode}) => {
   const [theme, setTheme] = useState(() => {
     if (typeof window !== 'undefined') {
       return localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
@@ -69,3 +69,5 @@ export const ThemeProvider = ({ children }: {children: React.ReactNode}) => {
     </ThemeContext.Provider>
   );
 };
+
+export { ThemeProvider, useTheme };

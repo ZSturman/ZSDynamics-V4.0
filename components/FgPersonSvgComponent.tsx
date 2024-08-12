@@ -1,4 +1,5 @@
-import { useTheme } from "@/context/themeContext";
+"use client"
+import { useTheme } from "../context/themeContext";
 import { motion } from "framer-motion";
 import React, { useEffect } from "react";
 

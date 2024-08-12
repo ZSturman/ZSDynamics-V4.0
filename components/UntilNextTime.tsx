@@ -1,19 +1,17 @@
-import React from "react";
-import InViewContainer from "../../animations/InViewContainer";
+"use client"
+import InViewContainer from "./animations/InViewContainer";
 import { motion } from "framer-motion";
-import { subtleVariant } from "@/components/animations/variants";
-import SocialMediaLinks from "@/components/SocialMediaLinks";
-import socialMediaLinks from "@/components/all-social-links"
+import { subtleVariant } from "@/site/variants";
 
-const ContactBottom = () => {
+const UntilNextTime = () => {
   return (
-    <div >
-    <InViewContainer fromDirection="top" className="flex flex-col gap-10 ">
+    <div>
+      <InViewContainer fromDirection="top" className="flex flex-col gap-10 ">
         <motion.h1
           className="text-3xl sm:text-2xl md:text-3xl sm:tracking-widest mb-8"
           variants={subtleVariant}
           initial="init"
-          whileInView={"headerEnter"}
+          animate={"start"}
         >
           👋 Thank you for visiting!
         </motion.h1>
@@ -28,7 +26,7 @@ const ContactBottom = () => {
           className=" mb-6 text-lg font-medium text-left "
           variants={subtleVariant}
           initial="init"
-          whileInView={"headerEnter"}
+          animate={"start"}
         >
           Feel free to reach out to me anytime
         </motion.p>
@@ -36,7 +34,7 @@ const ContactBottom = () => {
           className=" mb-6 text-lg font-medium text-left "
           variants={subtleVariant}
           initial="init"
-          whileInView={"headerEnter"}
+          animate={"start"}
         >
           at
           <a
@@ -44,34 +42,21 @@ const ContactBottom = () => {
             className="text-blue-500 hover:underline"
           >
             {" "}
-            {" "}
             zasturman@gmail.com
-          </a>
-          {" "}
-        
+          </a>{" "}
           or on social media!
         </motion.p>
         <motion.p
           className=" mb-6 text-lg font-medium text-left "
           variants={subtleVariant}
           initial="init"
-          whileInView={"headerEnter"}
+          animate={"start"}
         >
           I look forward to hearing from you!
         </motion.p>
-
-     <div className="lg:max-w-[500px] flex items-center justify-center">
-
-
-<SocialMediaLinks links={socialMediaLinks}/>
-     </div>
- 
-
-
-
       </InViewContainer>
     </div>
   );
 };
 
-export default ContactBottom;
+export default UntilNextTime;

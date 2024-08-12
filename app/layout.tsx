@@ -5,7 +5,7 @@ import { ThemeProvider } from "@/context/themeContext";
 
 export const metadata: Metadata = {
   title:
-    "Zachary Sturman - Full Stack Business Intelligence Developer | Scalable Systems Architect,",
+    "Zachary Sturman - Full Stack BuI Developer | Scalable Systems Architect,",
   description:
     "Full stack front end developer specializing in JavaScript and Python frameworks, building modern and responsive web experiences.",
 };
@@ -20,7 +20,7 @@ export default function RootLayout({
     <ThemeProvider>
       <html lang="en">
         <body
-          className={`${urbanist.className} w-screen min-h-screen flex items-center justify-center`}
+          className={`${urbanist.className} w-screen min-h-screen flex items-center justify-center `}
         >
           <main className="w-screen max-w-[2200px] ">{children}</main>
         </body>

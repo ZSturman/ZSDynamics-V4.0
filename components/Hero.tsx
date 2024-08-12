@@ -1,15 +1,16 @@
-import React from "react";
+"use client"
 import { motion } from "framer-motion";
-import socialMediaLinks from "@/components/social-links";
 import {
   jobTitleVariant,
   nameVariant,
   socialLinksVariantChildren,
-} from "@/components/animations/variants";
-import InViewContainer from "../../animations/InViewContainer";
-import SocialMediaLinks from "@/components/SocialMediaLinks";
+} from "@/site/variants";
+import InViewContainer from "./animations/InViewContainer";
 
-const HomeTop = () => {
+import PersonalLinks from "./PersonalLinks";
+import { mainLinks } from "@/site/links";
+
+const Hero = () => {
 
   const handleViewMyWorkClicked = () => {
     document
@@ -52,16 +53,19 @@ const HomeTop = () => {
         </motion.span>
       </motion.div>
 
+      <div>
 
-<SocialMediaLinks links={socialMediaLinks}/>
 
+
+<PersonalLinks links={mainLinks}/>
+      </div>
 
 
 
       <div className="flex flex-row gap-10 w-full justify-center">
       <motion.button
           className="text-2xl text-center text-dark-shade  p-2 rounded-lg hover:bg-dark-shade hover:text-lightest-shade"
-          whileHover={{ scale: 1.1 }}
+          whileHover={{ scale: 1.1, rotate: 2 }}
           onClick={handleViewMyWorkClicked}
           variants={socialLinksVariantChildren}
           initial="init"
@@ -74,7 +78,7 @@ const HomeTop = () => {
 
       <motion.button
           className="text-2xl text-center text-dark-shade  p-2 rounded-lg hover:bg-dark-shade hover:text-lightest-shade"
-          whileHover={{ scale: 1.1 }}
+          whileHover={{ scale: 1.1, rotate: -2 }}
           onClick={handleGetInTouchClicked}
           variants={socialLinksVariantChildren}
           initial="init"
@@ -87,7 +91,7 @@ const HomeTop = () => {
 
       <motion.button
           className="text-2xl text-center text-dark-shade  p-2 rounded-lg hover:bg-dark-shade hover:text-lightest-shade"
-          whileHover={{ scale: 1.1 }}
+          whileHover={{ scale: 1.1, rotate: 2 }}
           onClick={handleAboutClicked}
           variants={socialLinksVariantChildren}
           initial="init"
@@ -107,4 +111,4 @@ const HomeTop = () => {
   );
 };
 
-export default HomeTop;
+export default Hero;

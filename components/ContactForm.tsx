@@ -1,3 +1,4 @@
+"use client"
 import { useState } from "react";
 
 
@@ -9,11 +10,13 @@ const Spinner = () => {
   );
 };
 
-interface ContactFormProps {
-  setFlashMessage: Function;
-}
 
-const ContactForm: React.FC<ContactFormProps> = ({ setFlashMessage }) => {
+const ContactForm = () => {
+  const [flashMessage, setFlashMessage] = useState({
+    message: "",
+    type: "",
+    active: false,
+  });
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -106,6 +109,17 @@ const ContactForm: React.FC<ContactFormProps> = ({ setFlashMessage }) => {
   };
 
   return (
+    <div className="flex flex-col w-full justify-center items-center">
+    {flashMessage.active && (
+      <div
+        className={`${
+          flashMessage.type === "success" ? "bg-green-400/50" : "bg-red-400/50"
+        } text-white p-5 text-center backdrop-blur-sm`}
+      >
+        {flashMessage.message}
+      </div>
+    )}
+    <div className="rounded-lg  backdrop-blur-sm m-2 sm:m-5 sm:px-5 py-10 sm:w-[500px] md:w-[650px] lg:w-[900px]">
     <section id="contact" className="container mx-auto py-12 sm:px-4 ">
       <div className="contact-form-container p-8">
         <h2 className="contact-form-header text-2xl  mb-6">
@@ -175,7 +189,10 @@ const ContactForm: React.FC<ContactFormProps> = ({ setFlashMessage }) => {
         </form>
       </div>
     </section>
+    </div>
+    </div>
   );
 };
 
 export default ContactForm;
+

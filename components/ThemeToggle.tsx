@@ -1,3 +1,4 @@
+"use client"
 import { useTheme } from "@/context/themeContext";
 import { FaRegLightbulb } from "react-icons/fa6";
 

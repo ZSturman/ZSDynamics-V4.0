@@ -29,12 +29,16 @@ const jobTitleVariant = {
     headerEnter: {
       opacity: 1,
       scaleY: 1,
+      rotate: 0,
       transition: {
         delay: 0.15,
         duration: .7,
         ease: "easeOut",
       },
     },
+    hover: (index: number) => ({
+      rotate: index % 2 === 0 ? 5 : -5,
+    }),
     headerExit: {
       opacity: 0,
       y: -100,
@@ -67,27 +71,21 @@ const jobTitleVariant = {
   const subtleVariant = {
     init: {
       opacity: 0,
-      scale: 0.9,
+      scaleY: 0
     },
-    headerEnter: {
+    start:  (index: number = 0) => ({
       opacity: 1,
-      scale: 1,
+      scaleY: 1,
       transition: {
-        delay: 0.25,
+        delay: index * 0.1 + .5,
         duration: 0.8,
         ease: "easeInOut",
       },
-    },
-    headerExit: {
-      opacity: 0,
-      scale: 0.9,
-      transition: {
-        duration: 0.8,
-        ease: "easeInOut",
-      },
-    },
+    }),
   };
-  
+
+
+
   
   
 

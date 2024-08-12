@@ -80,36 +80,3 @@ async function handleContactFormSubmission(formData: ContactFormRequestBody) {
     return Response.json({ error: "Email sending failed" }, { status: 500 });
   }
 }
-
-/* 
-async function handleAnalytics(analyticsData: AnalyticsRequestBody) {
-  const DEFAULT_FROM = "zacharysturman@zsdynamics.com";
-  const DEFAULT_TO = "zasturman@gmail.com";
-  const DEFAULT_SUBJECT = "Default Subject";
-  const DEFAULT_TEXT = "This is the default email content.";
-
-  const {
-    from = DEFAULT_FROM,
-    to = DEFAULT_TO,
-    subject = DEFAULT_SUBJECT,
-    text = DEFAULT_TEXT,
-  } = analyticsData;
-
-  if (to !== "zasturman@gmail.com") {
-    return Response.json(
-      { error: "Invalid recipient email address" },
-      { status: 400 }
-    );
-  }
-
-  try {
-    await sendEmail({ from, to, subject, text });
-    return Response.json(
-      { message: "Email sent successfully" },
-      { status: 200 }
-    );
-  } catch (error) {
-    return Response.json({ error: "Email sending failed" }, { status: 500 });
-  }
-}
- */

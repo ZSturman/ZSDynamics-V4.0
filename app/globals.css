@@ -28,13 +28,12 @@
   --light-shade: #2a394e;
   --light-accent: #0d3282;
 
-  --dark-accent: #4971c9;
+  --dark-accent: #164dc1;
   --dark-shade: #c2cee5;
   --darker-shade: #a8b5cf;
   --darkest-shade: #fbfafb;
 
 }
-
 
 
 
@@ -61,4 +60,10 @@
   100% {
     transform: rotate(360deg);
   }
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+  background: transparent;
 }
