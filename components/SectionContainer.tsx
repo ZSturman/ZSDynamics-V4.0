@@ -69,7 +69,7 @@ const SectionContainer: React.FC<SectionContainerProps> = ({
           className="flex flex-row justify-center items-center relative overflow-y-clip shadow-md bg-lightest-shade w-full"
           style={{ height: `${navH}px` }}
         >
-          <div className="flex flex-row justify-evenly md:justify-between items-center w-full max-w-[900px] z-50">
+          <div className="flex flex-row justify-evenly items-center w-full max-w-[900px] z-50">
             {sectionNames.map((sectionName) => (
               <button
                 key={sectionName}
@@ -173,7 +173,7 @@ const SectionElement: React.FC<SectionProps> = ({
             whileHover={{ scale: 1.1 }}
             className="opacity-70 flex items-center justify-center hover:opacity-90 mx-auto"
           >
-            {section.bottom}
+            <p className="hidden md:inline">{section.bottom}</p>
             <FaAngleDown />
           </motion.button>
         </motion.div>
@@ -191,7 +191,7 @@ const SectionElement: React.FC<SectionProps> = ({
             className="opacity-70 flex items-center justify-center hover:opacity-90 mx-auto"
           >
             <FaAngleUp />
-            {section.top}
+            <p className="hidden md:inline">{section.top}</p>
           </motion.button>
         </motion.div>
       )}
@@ -210,7 +210,9 @@ const SectionElement: React.FC<SectionProps> = ({
             className="opacity-70 flex items-center justify-center hover:opacity-90"
           >
             <FaAngleLeft />
-            {isTop ? section.prevTop : section.prevBottom}
+            <p className="hidden md:inline">
+              {isTop ? section.prevTop : section.prevBottom}
+            </p>
           </motion.button>
         </motion.div>
       )}
@@ -228,7 +230,9 @@ const SectionElement: React.FC<SectionProps> = ({
             whileHover={{ scale: 1.1 }}
             className="opacity-70 flex items-center justify-center hover:opacity-90"
           >
-            {isTop ? section.nextTop : section.nextBottom}
+            <p className="hidden md:inline">
+              {isTop ? section.nextTop : section.nextBottom}
+            </p>
             <FaAngleRight />
           </motion.button>
         </motion.div>

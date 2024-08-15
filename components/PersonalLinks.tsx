@@ -10,7 +10,7 @@ type PersonalLinksProps = {
 
 const PersonalLinks: React.FC<PersonalLinksProps> = ({ links, showTitles, className}) => {
 
-  className = className || "flex flex-row flex-wrap md:gap-10 items-center justify-center w-full"
+  className = className || "flex flex-col gap-4 font-thin text-lg  text-dark-shade"
 
 
 
@@ -21,7 +21,7 @@ const PersonalLinks: React.FC<PersonalLinksProps> = ({ links, showTitles, classN
 
         return (
           <motion.a
-            className={`text-2xl text-center text-dark-shade p-2 rounded-lg hover:bg-dark-shade hover:text-lightest-shade group`}
+            className={`text-lg text-dark-shade p-2 rounded-lg hover:bg-dark-shade hover:text-lightest-shade group`}
             whileHover={{ scale: 1.1, rotate: `${rotation}deg` }}
             key={index}
             variants={socialLinksVariantChildren}
@@ -32,13 +32,13 @@ const PersonalLinks: React.FC<PersonalLinksProps> = ({ links, showTitles, classN
             target="_blank"
             rel="noreferrer"
           >
-            <div className="p-2  opacity-70 group-hover:cursor-pointer group-hover:scale-110 group-hover:opacity-90 flex flex-row gap-2">
+            <div className="p-2  opacity-70 group-hover:cursor-pointer group-hover:scale-110 group-hover:opacity-90 flex flex-row gap-2 items-center">
 
 
               <link.icon />
               {showTitles && (
 
-                <h3 className="sm:hidden md:block">
+                <h3 className="hidden sm:inline">
               {link.title}
               </h3>
               

@@ -1,7 +1,6 @@
 "use client"
 import { useState } from "react";
 
-
 const Spinner = () => {
   return (
     <div className="spinner-container">

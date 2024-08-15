@@ -57,7 +57,7 @@ const Hero = () => {
 
 
 
-<PersonalLinks links={mainLinks}/>
+<PersonalLinks links={mainLinks} className="flex flex-row flex-wrap md:gap-10 items-center justify-center w-full"/>
       </div>
 
 

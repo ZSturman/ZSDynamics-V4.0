@@ -9,123 +9,81 @@ const RecentProjects = () => {
   const selectedItems = portfolioItems.slice(0, 3);
 
   return (
-    <>
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-        className="flex flex-col items-center space-y-4"
-      >
-        {/* Front and Center Item */}
-        <motion.div className="w-full  p-4 ">
-          <ExportedImage
-            src={selectedItems[0].image}
-            alt={selectedItems[0].title}
-            width={800}
-            height={400}
-            className="w-full h-64 object-cover rounded-t-lg"
-          />
-          <h3 className="mt-2 text-2xl ">{selectedItems[0].title}</h3>
-          <div className="flex flex-row gap-4">
-
-          <p className=" opac">{selectedItems[0].description}</p>
-          
-          </div>
+    <div className="max-w-[900px] px-10">
+    <HowsMyEatingAd/>
 
 
-          <ProjectButtons selectedItem={selectedItems[0]} />
-        </motion.div>
-
-        {/* Two Smaller Items Below */}
-        <motion.div className="flex space-x-4 w-full ">
-          {selectedItems.slice(1).map((item, index) => (
-            <motion.div key={index} className="w-1/2 p-2 ">
-              <ExportedImage
-                src={item.image}
-                alt={item.title}
-                width={400}
-                height={200}
-                className="w-full h-40 object-cover rounded-t-lg"
-              />
-              <h4 className="mt-2 text-lg ">{item.title}</h4>
-              <p className=" text-sm">{item.description}</p>
-
-              
-
-
-              <ProjectButtons selectedItem={item} />
-            </motion.div>
-          ))}
-        </motion.div>
-      </motion.div>
-    </>
+    </div>
   );
 };
 
 export default RecentProjects;
 
-const ProjectTechStack = ({ techStack }: { techStack: string[] }) => {
+
+
+import React from "react";
+
+const HowsMyEatingAd = () => {
   return (
-    <div className="flex space-x-2 opacity-50">
-      {techStack.map((tech, index) => (
-        <span key={index} >
-          {index > 0 && " | "}{" "}
-          {tech} 
-        </span>
-      ))}
-    </div>
-  );
-}
+    <div className="p-10 text-dark-shade">
+      <h2 className="text-3xl  mb-4 text-center">
+       Recent:         <strong className="font-bold">
 
+&quot;How&apos;s My Eating?&quot;  {" "}
+</strong>
+      </h2>
+      <h3 className="text-2xl   mb-4 text-center">
 
+      An App to Slow Down Binge Eating
+      </h3>
 
-const ProjectButtons = ({ selectedItem }: { selectedItem: PortfolioItem }) => {
-  return (
-    <div className="flex space-x-4 opacity-60">
+<div className="flex flex-row items-center justify-center">
 
-      {selectedItem.demo && (
-        <Link
-          href={selectedItem.demo}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hover:font-semibold underline"
+      <a href="https://zacharysturman.hashnode.dev/hows-my-eating" className="bg-dark-shade text-light-shade px-2 py-1s m-1 rounded-md">View Article</a>
+</div>
+
+      <p className=" mb-4">
+      &quot;How&apos;s My Eating?&quot;  {" "}is an iOS application designed to
+        help users develop healthier eating habits by slowing down their eating
+        pace. The app uses kinetic data collected from devices like AirPods to
+        monitor your eating speed and provide real-time notifications if you’re
+        eating too fast.
+      </p>
+      <p className=" mb-4">
+        <strong>Key Features:</strong>
+        <ul className="list-disc ml-6">
+          <li>
+            Real-Time Notifications: Get instant alerts to slow down if
+            you&apos;re eating too fast.
+          </li>
+          <li>
+            Kinetic Data Monitoring: Analyze your eating habits using motion
+            data from AirPods.
+          </li>
+          <li>
+            Privacy-Friendly: Focuses on kinetic data, ensuring a less intrusive
+            experience.
+          </li>
+        </ul>
+      </p>
+      <p className=" mb-4">
+        The app is currently in development, with ongoing data collection and
+        model training. Stay tuned for the launch!
+      </p>
+      <div className="flex space-x-4">
+        <a
+          href="https://github.com/ZSturman/Hows-My-Eating"
+          className="bg-blue-600 text-white py-2 px-4 rounded-lg shadow hover:bg-blue-700 transition duration-200"
         >
-          Demo
-        </Link>
-      )}
-
-      {selectedItem.download && (
-        <Link
-          href={selectedItem.download}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hover:font-semibold underline"
+          Download the most recent build
+        </a>
+        <a
+          href="https://www.linkedin.com/in/zacharysturman/"
+          className="bg-blue-500 text-white py-2 px-4 rounded-lg shadow hover:bg-blue-600 transition duration-200"
         >
-          Download
-        </Link>
-      )}
-
-      {selectedItem.visit && (
-        <Link
-          href={selectedItem.visit}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hover:font-semibold underline"
-        >
-          Visit
-        </Link>
-      )}
-
-{selectedItem.repo && (
-        <Link
-          href={selectedItem.repo}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hover:font-semibold underline"
-        >
-          Repo
-        </Link>
-      )}
+          Connect on LinkedIn
+        </a>
+      </div>
     </div>
   );
 };

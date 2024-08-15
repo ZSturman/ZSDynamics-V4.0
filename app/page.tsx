@@ -48,7 +48,7 @@ export default function Home() {
 
 
     <AnimationContext.Provider value={{ controls, scrollYProgress }}>
-      <div className="fixed top-0 left-0 p-2">
+      <div className="fixed top-0 left-0 p-2 z-30">
         <motion.div
           variants={toggleVariants}
           initial="initial"
