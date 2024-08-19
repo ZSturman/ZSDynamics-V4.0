@@ -5,9 +5,9 @@ import { ThemeProvider } from "@/context/themeContext";
 
 export const metadata: Metadata = {
   title:
-    "Zachary Sturman - Full Stack BuI Developer | Scalable Systems Architect,",
+    "Zachary Sturman | Full-Stack Developer | Python | React | Rust | TypeScript",
   description:
-    "Full stack front end developer specializing in JavaScript and Python frameworks, building modern and responsive web experiences.",
+    "Cross-Platform Development | Responsive and Mobile-First User Interfaces | Scalable Backend Architectures with Robust APIs | Real-Time Data Processing",
 };
 const urbanist = Urbanist({ weight: "400", subsets: ["latin"] });
 
