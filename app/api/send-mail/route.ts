@@ -1,4 +1,5 @@
 // api/send-analytics/route.ts
+const functions = require('firebase-functions');
 
 import type { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
@@ -15,15 +16,24 @@ async function sendEmail(mailOptions: {
   subject: string;
   text: string;
 }) {
+  // const transporter = nodemailer.createTransport({
+  //   service: "Gmail",
+  //   auth: {
+  //     user: process.env.EMAIL_USERNAME,
+  //     pass: process.env.EMAIL_PASSWORD,
+  //   },
+  // });
   const transporter = nodemailer.createTransport({
     service: "Gmail",
     auth: {
-      user: process.env.EMAIL_USERNAME,
-      pass: process.env.EMAIL_PASSWORD,
+      user: functions.config().gmail.username,
+      pass: functions.config().gmail.password,
     },
   });
   await transporter.sendMail(mailOptions);
 }
+
+
 
 
 
@@ -41,9 +51,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
   // Distinguish between analytics and contact form submissions with Validation
   if (body.hasOwnProperty("name") && body.hasOwnProperty("email")) {
     await handleContactFormSubmission(body as ContactFormRequestBody);
-  } /* else {
-    await handleAnalytics(body as AnalyticsRequestBody);
-  } */
+  } 
 
   return Response.json(
     { message: "Request processed successfully" },
