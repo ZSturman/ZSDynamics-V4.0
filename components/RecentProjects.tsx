@@ -1,18 +1,10 @@
 "use client";
-import portfolioItems from "@/site/portfolio-items";
-import { motion } from "framer-motion";
-import ExportedImage from "next-image-export-optimizer";
-import Link from "next/link";
 
 const RecentProjects = () => {
-  // Select three items to display
-  const selectedItems = portfolioItems.slice(0, 3);
 
   return (
     <div className="max-w-[900px] px-10">
-    <HowsMyEatingAd/>
-
-
+      <HowsMyEatingAd />
     </div>
   );
 };
@@ -20,52 +12,52 @@ const RecentProjects = () => {
 export default RecentProjects;
 
 
-
-import React from "react";
-
 const HowsMyEatingAd = () => {
+  const projectContent = {
+    title: "How's My Eating?",
+    subtitle: "An App to Slow Down Binge Eating",
+    description:
+      "'How's My Eating?' is an iOS application designed to help users develop healthier eating habits by slowing down their eating pace. The app uses kinetic data collected from devices like AirPods to monitor your eating speed and provide real-time notifications if eating too fast.",
+    features: [
+      "Real-Time Notifications: Get instant alerts to slow down if you're eating too fast.",
+      "Kinetic Data Monitoring: Analyze your eating habits using motion data from AirPods.",
+      "Privacy-Friendly: Focuses on kinetic data, ensuring a less intrusive experience.",
+    ],
+  };
+
   return (
     <div className="p-10 text-dark-shade">
       <h2 className="text-3xl  mb-4 text-center">
-       Recent:         <strong className="font-bold">
-
-&quot;How&apos;s My Eating?&quot;  {" "}
-</strong>
+        Recent:
+        <strong className="font-bold">{projectContent.title}</strong>
       </h2>
-      <h3 className="text-2xl   mb-4 text-center">
+      <h3 className="text-2xl   mb-4 text-center">{projectContent.subtitle}</h3>
 
-      An App to Slow Down Binge Eating
-      </h3>
-
-<div className="flex flex-row items-center justify-center">
-
-      <a href="https://zacharysturman.hashnode.dev/hows-my-eating" className="bg-dark-shade text-light-shade px-2 py-1s m-1 rounded-md">View Article</a>
-</div>
+      <div className="flex flex-row items-center justify-center">
+        <a
+          href="https://zacharysturman.hashnode.dev/hows-my-eating"
+          className="bg-dark-shade text-light-shade px-2 py-1s m-1 rounded-md"
+        >
+          View Article
+        </a>
+      </div>
 
       <p className=" mb-4">
-      &quot;How&apos;s My Eating?&quot;  {" "}is an iOS application designed to
-        help users develop healthier eating habits by slowing down their eating
-        pace. The app uses kinetic data collected from devices like AirPods to
-        monitor your eating speed and provide real-time notifications if you’re
-        eating too fast.
+        <strong>Description:</strong> {projectContent.description}
       </p>
       <p className=" mb-4">
         <strong>Key Features:</strong>
-        <ul className="list-disc ml-6">
-          <li>
-            Real-Time Notifications: Get instant alerts to slow down if
-            you&apos;re eating too fast.
-          </li>
-          <li>
-            Kinetic Data Monitoring: Analyze your eating habits using motion
-            data from AirPods.
-          </li>
-          <li>
-            Privacy-Friendly: Focuses on kinetic data, ensuring a less intrusive
-            experience.
-          </li>
-        </ul>
+        <div className="list-disc ml-6">
+          <ul>
+            {projectContent.features.map((feature) => (
+              <li key={feature} className="mb-2">
+                {feature}
+              </li>
+            ))}
+          </ul>
+        </div>
       </p>
+
       <p className=" mb-4">
         The app is currently in development, with ongoing data collection and
         model training. Stay tuned for the launch!
