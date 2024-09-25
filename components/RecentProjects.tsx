@@ -43,9 +43,9 @@ const HowsMyEatingAd = () => {
       </div>
 
       <p className=" mb-4">
-        <strong>Description:</strong> {projectContent.description}
+      {projectContent.description}
       </p>
-      <p className=" mb-4">
+      <p className=" mb-4 hidden">
         <strong>Key Features:</strong>
         <div className="list-disc ml-6">
           <ul>
@@ -58,22 +58,19 @@ const HowsMyEatingAd = () => {
         </div>
       </p>
 
-      <p className=" mb-4">
-        The app is currently in development, with ongoing data collection and
-        model training. Stay tuned for the launch!
-      </p>
+
       <div className="flex space-x-4">
         <a
           href="https://github.com/ZSturman/Hows-My-Eating"
           className="bg-blue-600 text-white py-2 px-4 rounded-lg shadow hover:bg-blue-700 transition duration-200"
         >
-          Download the most recent build
+          Download
         </a>
         <a
           href="https://www.linkedin.com/in/zacharysturman/"
           className="bg-blue-500 text-white py-2 px-4 rounded-lg shadow hover:bg-blue-600 transition duration-200"
         >
-          Connect on LinkedIn
+          Connect
         </a>
       </div>
     </div>

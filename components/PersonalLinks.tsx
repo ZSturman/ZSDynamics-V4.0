@@ -38,7 +38,7 @@ const PersonalLinks: React.FC<PersonalLinksProps> = ({ links, showTitles, classN
               <link.icon />
               {showTitles && (
 
-                <h3 className="hidden sm:inline">
+                <h3 className="">
               {link.title}
               </h3>
               
