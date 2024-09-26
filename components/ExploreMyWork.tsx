@@ -1,4 +1,4 @@
-"use client";
+/* "use client";
 import PersonalLinks from "./PersonalLinks";
 import { workLinks } from "@/site/links";
 
@@ -17,3 +17,4 @@ const ExploreMyWork = () => {
 };
 
 export default ExploreMyWork;
+ */

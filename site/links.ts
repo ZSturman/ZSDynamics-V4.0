@@ -51,25 +51,20 @@ export const workLinks: SocialMediaLink[] = [
     icon: FaGithub,
   },
   {
-    title: "Dev.to",
-    href: "https://dev.to/zacharysturman",
-    icon: FaDev,
-  },
-  {
     title: "Hashnode",
     href: "https://zacharysturman.hashnode.dev/",
     icon: FaHashnode,
-  },
-  {
-    title: "CodePen",
-    href: "https://codepen.io/zsturman",
-    icon: FaCodepen,
   },
 
 
 
 ];
 export const socialLinks: SocialMediaLink[] = [
+  {
+    title: "GitHub",
+    href: "https://github.com/ZSturman",
+    icon: FaGithub,
+  },
   {
     title: "LinkedIn",
     href: "https://www.linkedin.com/in/zacharysturman/",
@@ -86,9 +81,9 @@ export const socialLinks: SocialMediaLink[] = [
     icon: FaBluesky,
   },
   {
-    title: "zasturman@gmail.com",
-    href: "mailto:zasturman@gmail.com",
-    icon: FaEnvelope,
+    title: "HackerRank",
+    href: "https://www.hackerrank.com/zasturman",
+    icon: LiaHackerrank,
   },
 ];
 
@@ -101,16 +96,7 @@ export const otherLinks: SocialMediaLink[] = [
 ]
 
 const notUsed: SocialMediaLink[] = [
-  {
-    title: "HackerRank",
-    href: "https://www.hackerrank.com/zasturman",
-    icon: LiaHackerrank,
-  },
-  {
-    title: "Mastodon",
-    href: "https://mastodon.social/@zacharysturman",
-    icon: FaMastodon,
-  },
+
   {
     title: "Medium",
     href: "https://zacharysturman.medium.com/",
@@ -120,11 +106,6 @@ const notUsed: SocialMediaLink[] = [
     title: "Substack",
     href: "https://zacharysturman.substack.com/",
     icon: BsSubstack,
-  },
-  {
-    title: "Dribbble",
-    href: "https://dribbble.com/zsturman",
-    icon: FaDribbble,
   },
   {
     title: "GitLab",

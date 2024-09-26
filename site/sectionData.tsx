@@ -1,13 +1,12 @@
 "use client"
 import Hero from "@/components/Hero";
 import RecentProjects from "../components/RecentProjects";
-import ExploreMyWork from "../components/ExploreMyWork";
+
 import WhatIKnow from "../components/WhatIKnow";
 import Bio from "../components/Bio";
 import FindMeOn from "../components/FindMeOn";
-import ContactForm from "@/components/ContactForm";
+
 import UntilNextTime from "../components/UntilNextTime";
-import { connect } from "http2";
 
 const evenColors: ColorLayout = {
   textColor: "text-darkest-shade",
@@ -61,8 +60,8 @@ export const sectionLayouts: SectionColumns[] = [
       },
       {
         id: 2,
-        title: "explore-my-work",
-        content: <ExploreMyWork />
+        title: "find-me-on",
+        content: <FindMeOn />,
       }
     ]
   },
@@ -77,12 +76,12 @@ export const sectionLayouts: SectionColumns[] = [
       },
       {
         id: 2,
-        title: "find-me-on",
-        content: <FindMeOn />,
+        title: "until-next-time",
+        content: <UntilNextTime />,
       }
     ]
-  },
-  {
+  }
+/*   {
     id: 4,
     title: "contact",
     rows: [
@@ -97,7 +96,7 @@ export const sectionLayouts: SectionColumns[] = [
         content: <UntilNextTime />,
       }
     ]
-  },
+  }, */
 ]
 
 
@@ -127,14 +126,14 @@ export const portfolioSections: PortfolioSection[] = [
     navAddition: false,
     ...evenColors,
   },
-  {
+/*   {
     rowId: 1,
     colId: 4,
     title: "contact-form",
     content: <ContactForm />,
     navAddition: false,
     ...oddColors,
-  }, 
+  },  */
   {
     rowId: 2,
     colId: 1,
@@ -143,30 +142,38 @@ export const portfolioSections: PortfolioSection[] = [
     navAddition: false,
     ...oddColors,
   },
-  {
+/*   {
     rowId: 2,
     colId: 2,
     title: "explore-my-work",
     content: <ExploreMyWork />,
     navAddition: false,
     ...evenColors,
+  }, */
+  {
+    rowId: 2,
+    colId: 2,
+    title: "socials",
+    content: <FindMeOn />,
+    navAddition: false,
+    ...evenColors,
   },
   {
     rowId: 2,
     colId: 3,
-    title: "socials",
-    content: <FindMeOn />,
+    title: "until-next-time",
+    content: <UntilNextTime />,
     navAddition: false,
     ...oddColors,
   },
-  {
+/*   {
     rowId: 2,
     colId: 4,
     title: "until-next-time",
     content: <UntilNextTime />,
     navAddition: false,
     ...evenColors,
-  },
+  }, */
 ]
 
 
@@ -189,7 +196,7 @@ export type DisplayedSectionProps = {
     navAddition?: boolean;
   };
   
-export const sectionNames = ["home", "studio", "bio",  "contact"];
+export const sectionNames = ["home", "studio", "bio"];
 
 export const sections: DisplayedSectionProps[] = [
     {
@@ -214,7 +221,7 @@ export const sections: DisplayedSectionProps[] = [
       id: 2,
       title: "studio",
       contentTop: () => <WhatIKnow />,
-      contentBottom: () => <ExploreMyWork />,
+      contentBottom: () => <FindMeOn />,
       bgTopColor: "bg-light-shade",
       bgBottomColor: "bg-lighter-shade",
         textColor: "text-darkest-shade",
@@ -234,7 +241,7 @@ export const sections: DisplayedSectionProps[] = [
       id: 3,
       title: "bio",
       contentTop: () => <Bio />,
-      contentBottom: () => <FindMeOn />,
+      contentBottom: () => <UntilNextTime/>,
       bgTopColor: "bg-lighter-shade",
       bgBottomColor: "bg-light-shade",
       textColor: "text-darkest-shade",
@@ -249,7 +256,7 @@ export const sections: DisplayedSectionProps[] = [
         navAddition: false,
 
     },
-
+/* 
     {
       id: 4,
       title: "contact",
@@ -269,5 +276,5 @@ export const sections: DisplayedSectionProps[] = [
         
         navAddition: false,
      
-    },
+    }, */
   ];
