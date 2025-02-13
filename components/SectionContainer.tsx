@@ -173,7 +173,7 @@ const SectionElement: React.FC<SectionProps> = ({
             whileHover={{ scale: 1.1 }}
             className="opacity-70 flex items-center justify-center hover:opacity-90 mx-auto"
           >
-            <p className="hidden md:inline">{section.bottom}</p>
+            <div className="hidden md:inline">{section.bottom}</div>
             <FaAngleDown />
           </motion.button>
         </motion.div>
@@ -191,7 +191,7 @@ const SectionElement: React.FC<SectionProps> = ({
             className="opacity-70 flex items-center justify-center hover:opacity-90 mx-auto"
           >
             <FaAngleUp />
-            <p className="hidden md:inline">{section.top}</p>
+            <div className="hidden md:inline">{section.top}</div>
           </motion.button>
         </motion.div>
       )}
@@ -210,9 +210,9 @@ const SectionElement: React.FC<SectionProps> = ({
             className="opacity-70 flex items-center justify-center hover:opacity-90"
           >
             <FaAngleLeft />
-            <p className="hidden md:inline">
+            <div className="hidden md:inline">
               {isTop ? section.prevTop : section.prevBottom}
-            </p>
+            </div>
           </motion.button>
         </motion.div>
       )}
@@ -230,9 +230,9 @@ const SectionElement: React.FC<SectionProps> = ({
             whileHover={{ scale: 1.1 }}
             className="opacity-70 flex items-center justify-center hover:opacity-90"
           >
-            <p className="hidden md:inline">
+            <div className="hidden md:inline">
               {isTop ? section.nextTop : section.nextBottom}
-            </p>
+            </div>
             <FaAngleRight />
           </motion.button>
         </motion.div>
