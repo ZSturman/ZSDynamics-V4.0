@@ -119,7 +119,7 @@ const ProductionSchedulingAppAd = () => {
 
       <div className="flex space-x-4">
         <a
-          href="/macOS/rods-sheets_0.1.0_aarch64.dmg"
+            href="https://github.com/ZSturman/rods-sheets_v2"
           className="bg-blue-600 text-white py-2 px-4 rounded-lg shadow hover:bg-blue-700 transition duration-200"
         >
           Download for macOS
