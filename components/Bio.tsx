@@ -11,34 +11,26 @@ const Bio = () => {
 <div className="px-10">
 
 
-        <p className="text-lg  text-left leading-relaxed">
-         a full-stack developer passionate about
-          creating innovative solutions with technologies like Next.js, React,
-          and Python. 
-        </p>
-        <div className="">
-
-        <p className="text-lg  text-left leading-relaxed mt-4">
-          Outside of programming I enjoy:
+<p className="text-lg text-left leading-relaxed">
+            a full-stack developer and data engineer with expertise in building scalable applications, machine learning pipelines, and backend systems. 
           </p>
 
-        <ul className="text-lg text-left leading-relaxed list-disc pl-8">
-          <li>
-            Writing and animating
-          </li>
-          <li>
-            Learning about neuroscience & quantum physics
-          </li>
-          <li>
-           And helping animals
-          </li>
-        </ul>
-        </div>
+          <p className="text-lg text-left leading-relaxed mt-4">
+            My work includes building LLM-powered assistants, optimizing data architectures, and developing end-to-end ML solutions.
+          </p>
+        <div>
+            <p className="text-lg text-left leading-relaxed mt-4">Outside of programming, I enjoy:</p>
+            <ul className="text-lg text-left leading-relaxed list-disc pl-8">
+              <li>Writing and animating</li>
+              <li>Exploring neuroscience & quantum physics</li>
+              <li>Helping animals and supporting non-profit initiatives</li>
+            </ul>
+          </div>
 
-        <p className="text-lg  text-left leading-relaxed mt-4">
-          I&apos;m committed to improving the world around me through creativity,
-          education, and compassion, 
-        </p>
+        <p className="text-lg text-left leading-relaxed mt-4">
+            I am committed to solving real-world problems through technology, education, and creative solutions.
+          </p>
+
 
         <p className="text-sm italic text-center mt-4 opacity-50">
           scroll down to get in touch!
