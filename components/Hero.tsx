@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { motion } from "framer-motion";
 import {
   jobTitleVariant,
@@ -11,7 +11,6 @@ import PersonalLinks from "./PersonalLinks";
 import { mainLinks } from "@/site/links";
 
 const Hero = () => {
-
   const handleViewMyWorkClicked = () => {
     document
       .getElementById("sectionhomeBottom")
@@ -43,27 +42,25 @@ const Hero = () => {
 
       <motion.div className="text-6xl text-center text-dark-shade sm:tracking-wide">
         Hi, I&apos;m{" "}
-        <motion.span 
+        <motion.span
           className="text-dark-accent  "
-        whileInView="headerEnter"
-        variants={nameVariant}
-        initial="init"
+          whileInView="headerEnter"
+          variants={nameVariant}
+          initial="init"
         >
           Zachary
         </motion.span>
       </motion.div>
 
       <div>
-
-
-
-<PersonalLinks links={mainLinks} className="flex flex-row flex-wrap md:gap-10 items-center justify-center w-full"/>
+        <PersonalLinks
+          links={mainLinks}
+          className="flex flex-row flex-wrap md:gap-10 items-center justify-center w-full"
+        />
       </div>
 
-
-
       <div className="flex flex-row gap-10 w-full justify-center">
-      <motion.button
+        <motion.button
           className="text-2xl text-center text-dark-shade  p-2 rounded-lg hover:bg-dark-shade hover:text-lightest-shade"
           whileHover={{ scale: 1.1, rotate: 2 }}
           onClick={handleViewMyWorkClicked}
@@ -73,10 +70,9 @@ const Hero = () => {
           custom={3}
         >
           View My Work
+        </motion.button>
 
-      </motion.button>
-
-      <motion.button
+        <motion.button
           className="text-2xl text-center text-dark-shade  p-2 rounded-lg hover:bg-dark-shade hover:text-lightest-shade"
           whileHover={{ scale: 1.1, rotate: -2 }}
           onClick={handleGetInTouchClicked}
@@ -86,10 +82,9 @@ const Hero = () => {
           custom={4}
         >
           Get In Touch
+        </motion.button>
 
-      </motion.button>
-
-      <motion.button
+        <motion.button
           className="text-2xl text-center text-dark-shade  p-2 rounded-lg hover:bg-dark-shade hover:text-lightest-shade"
           whileHover={{ scale: 1.1, rotate: 2 }}
           onClick={handleAboutClicked}
@@ -99,14 +94,8 @@ const Hero = () => {
           custom={5}
         >
           About
-
-      </motion.button>
-    </div>
-    
-
-      
-
-
+        </motion.button>
+      </div>
     </InViewContainer>
   );
 };

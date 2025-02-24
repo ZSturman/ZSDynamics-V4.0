@@ -5,7 +5,7 @@ import {
   motion,
   MotionValue,
 } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import FgPersonSvgComponent from "@/components/FgPersonSvgComponent";
 import { useAnimationControlsContext } from "@/context/animationContext";
 import { DisplayedSectionProps, sectionNames } from "@/site/sectionData";
@@ -21,6 +21,22 @@ type SectionContainerProps = {
   section: DisplayedSectionProps;
   index: number;
 };
+
+function useMediaQuery(query: string): boolean {
+  const [matches, setMatches] = useState<boolean>(false);
+
+  useEffect(() => {
+    const media = window.matchMedia(query);
+    if (media.matches !== matches) {
+      setMatches(media.matches);
+    }
+    const listener = () => setMatches(media.matches);
+    media.addEventListener("change", listener);
+    return () => media.removeEventListener("change", listener);
+  }, [matches, query]);
+
+  return matches;
+}
 
 const SectionContainer: React.FC<SectionContainerProps> = ({
   section,
@@ -50,6 +66,8 @@ const SectionContainer: React.FC<SectionContainerProps> = ({
       ?.scrollIntoView({ behavior: "smooth" });
   };
 
+  const isSmallScreen = useMediaQuery("(max-width: 767px)");
+
   return (
     <div
       className={`w-screen snap-center flex flex-col items-center justify-center ${section.textColor}`}
@@ -63,7 +81,7 @@ const SectionContainer: React.FC<SectionContainerProps> = ({
       />
 
       <div className="relative w-full">
-        {section.navAddition && <FGPerson navH={navH} />}
+               {section.navAddition && !isSmallScreen && <FGPerson navH={navH} />}
 
         <div
           className="flex flex-row justify-center items-center relative overflow-y-clip shadow-md bg-lightest-shade w-full"
