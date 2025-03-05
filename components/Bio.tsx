@@ -15,21 +15,21 @@ const Bio = () => {
             a full-stack developer and data engineer with expertise in building scalable applications, machine learning pipelines, and backend systems. 
           </p>
 
-          <p className="text-sm md:text-base lg:text-lg text-left leading-relaxed mt-4">
+          <p className="text-sm md:text-base lg:text-lg text-left leading-relaxed mt-4 hidden sm:block">
             My work includes building LLM-powered assistants, optimizing data architectures, and developing end-to-end ML solutions.
           </p>
         <div>
             <p className="text-sm md:text-base lg:text-lg text-left leading-relaxed mt-4">Outside of programming, I enjoy:</p>
             <ul className="text-sm md:text-base lg:text-lg text-left leading-relaxed list-disc pl-8">
-              <li>Writing and animating</li>
-              <li>Exploring neuroscience & quantum physics</li>
-              <li>Helping animals and supporting non-profit initiatives</li>
-            </ul>
+    <li>Creative writing and animation</li>
+    <li>Exploring topics in neuroscience and quantum physics</li>
+    <li>Volunteering for animal welfare and non-profit initiatives</li>
+  </ul>
           </div>
 
-        <p className="text-sm md:text-base lg:text-lg text-left leading-relaxed mt-4">
-            I am committed to solving real-world problems through technology, education, and creative solutions.
-          </p>
+          <p className="text-sm md:text-base lg:text-lg text-left leading-relaxed mt-4">
+  I&apos;m passionate about leveraging technology to address real-world challenges through thoughtful design and effective solutions.
+</p>
 
 
         <p className="text-sm italic text-center mt-4 opacity-50">

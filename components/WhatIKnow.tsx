@@ -3,6 +3,9 @@ import { FaReact } from "react-icons/fa";
 import { AiOutlinePython } from "react-icons/ai";
 import { FaAws } from "react-icons/fa";
 import { TbBrandTypescript } from "react-icons/tb";
+import { GrSwift } from "react-icons/gr";
+import { FaDatabase } from "react-icons/fa6";
+
 
 const WhatIKnow = () => {
   return (
@@ -19,22 +22,32 @@ const WhatIKnow = () => {
         <div className="flex flex-col gap-4 font-thin text-lg  text-dark-shade">
           <div className="flex-row flex items-center gap-2">
             <FaReact />
-            <p>React </p>
+            <p>React / Next.js</p>
           </div>
 
           <div className="flex-row flex items-center gap-2">
             <AiOutlinePython />
-            <p>Python</p>
+            <p>Python / FastAPI</p>
+          </div>
+
+          <div className="flex-row flex items-center gap-2">
+            <GrSwift />
+            <p>Swift / iOS</p>
           </div>
 
           <div className="flex-row flex items-center gap-2">
             <TbBrandTypescript />
-            <p>TypeScript</p>
+            <p>TypeScript / Node.js</p>
           </div>
 
           <div className="flex-row flex items-center gap-2">
             <FaAws />
-            <p>AWS</p>
+            <p>AWS / Firebase</p>
+          </div>
+
+          <div className="flex-row flex items-center gap-2">
+          <FaDatabase />
+          <p>SQL / NoSQL</p>
           </div>
 
           <motion.a

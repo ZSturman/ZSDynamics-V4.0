@@ -1,17 +1,14 @@
 "use client";
 
 const RecentProjects = () => {
-
   return (
     <div className="max-w-[900px] px-10">
-      {/* <HowsMyEatingAd /> */}
       <ProductionSchedulingAppAd />
     </div>
   );
 };
 
 export default RecentProjects;
-
 
 const HowsMyEatingAd = () => {
   const projectContent = {
@@ -43,9 +40,7 @@ const HowsMyEatingAd = () => {
         </a>
       </div>
 
-      <div className=" mb-4">
-      {projectContent.description}
-      </div>
+      <div className=" mb-4">{projectContent.description}</div>
       <div className=" mb-4 hidden">
         <strong>Key Features:</strong>
         <div className="list-disc ml-6">
@@ -58,7 +53,6 @@ const HowsMyEatingAd = () => {
           </ul>
         </div>
       </div>
-
 
       <div className="flex space-x-4">
         <a
@@ -78,63 +72,69 @@ const HowsMyEatingAd = () => {
   );
 };
 
-
-
 const ProductionSchedulingAppAd = () => {
   const projectContent = {
     title: "Production Scheduling Desktop App",
-    subtitle: "Streamline Your Production Scheduling",
+    subtitle: "Automating Scheduling with Pipelines & Gantt Charts",
     description:
-      "The Production Scheduling Desktop App leverages Google Sheets as a database to streamline production scheduling with cross-platform support, interactive Gantt charts, and role-based access control. This app simplifies production workflows with a minimal, extensible UI.",
+      "A cross-platform production scheduling app that integrates directly with Google Sheets, leveraging a Rust-powered backend and a React frontend to manage and visualize production workflows. With automated Gantt chart generation, and secure authentication, it streamlines scheduling for manufacturers.",
     features: [
-      "Cross-Platform Support: Works on macOS, Windows, and Linux.",
-      "Google Sheets Integration: No extra database needed.",
-      "Interactive Gantt Charts: Automatically generate visual timelines.",
-      "Role-Based Access: Customizes access and views by roles.",
+      "Cross-Platform Support: Runs on macOS, Windows, and Linux.",
+      "Gantt Charts & Scheduling: Auto-generates interactive timelines for production jobs.",
+      "Secure Authentication: Uses a Google Cloud service account key for controlled access.",
+      "Google Sheets Integration: Uses Google Sheets as a backend, eliminating the need for an extra database.",
+      "CI/CD Pipeline: Automated testing & deployment via GitHub Actions & Rust Cargo Build.",
+      "Customizable UI & Workflow: Modify job details, filters, and Gantt behaviors to fit specific needs.",
     ],
+    githubLink: "https://github.com/ZSturman/rods-sheets_v2",
+    videoLink: "https://www.youtube.com/embed/mIDGjtzKFQ0",
   };
 
   return (
-    <div className="p-10 text-dark-shade">
-      <h2 className="text-3xl mb-4 text-center">
-        Recent:
-        <strong className="font-bold"> {projectContent.title}</strong>
+    <div className="p-6 md:p-8 lg:p-10 text-dark-shade flex flex-col items-center max-w-screen-lg mx-auto">
+      <h2 className="text-lg sm:text-xl md:text-2xl text-center font-bold mb-2">
+        {projectContent.title}
       </h2>
-      <h3 className="text-2xl mb-4 text-center">{projectContent.subtitle}</h3>
+      <h3 className="text-md sm:text-lg md:text-xl text-center mb-3">
+        {projectContent.subtitle}
+      </h3>
 
-      <div className=" mb-4">{projectContent.description}</div>
+      {/* Description - Hidden on smaller screens */}
+      <p className="text-sm md:text-base text-center mb-4 hidden md:block">
+        {projectContent.description}
+      </p>
 
-      <div className=" mb-4 hidden">
-        <strong>Key Features:</strong>
-        <div className="list-disc ml-6">
-          <ul>
-            {projectContent.features.map((feature) => (
-              <li key={feature} className="mb-2">
-                {feature}
-              </li>
-            ))}
-          </ul>
+      <div className="flex flex-row-reverse items-center justify-center">
+
+        <div className="flex flex-col">
+
+        {/* Features - Prioritized content */}
+        <ul className="list-disc text-sm md:text-base ml-4 md:ml-6 mb-4 space-y-2">
+          {projectContent.features.slice(0, 4).map((feature) => (
+            <li key={feature}>{feature}</li>
+          ))}
+        </ul>
+        <div className="mt-4 md:mt-6 mx-auto">
+        <a
+          href={projectContent.githubLink}
+          className="bg-blue-900 text-white text-sm md:text-base py-2 px-4 rounded-lg shadow hover:bg-blue-800 transition duration-200"
+        >
+          Download Latest Release
+        </a>
+      </div>
+          </div>
+
+        {/* Video - Shown only on medium and larger screens */}
+        <div className="w-full justify-center mt-4 md:mt-6 hidden md:flex">
+          <iframe
+            className="w-full max-w-[500px] h-[280px] md:max-w-[650px] md:h-[350px] lg:max-w-[700px] lg:h-[400px] rounded-lg shadow-lg"
+            src={projectContent.videoLink}
+            title="Production Scheduling App Demo"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
         </div>
       </div>
-
-      <div className="flex space-x-4">
-        <a
-            href="https://github.com/ZSturman/rods-sheets_v2"
-          className="bg-blue-600 text-white py-2 px-4 rounded-lg shadow hover:bg-blue-700 transition duration-200"
-        >
-          Download for macOS
-        </a>
-        <a
-          href="https://github.com/ZSturman/rods-sheets_v2"
-          className="bg-blue-500 text-white py-2 px-4 rounded-lg shadow hover:bg-blue-600 transition duration-200"
-        >
-          GitHub (Windows & Linux)
-        </a>
-      </div>
-
-      <p className="mt-4 text-sm text-white opacity-50">
-        Note: Windows users may encounter warnings when installing the app as the application is not signed for Windows at this time.
-      </p>
     </div>
   );
 };

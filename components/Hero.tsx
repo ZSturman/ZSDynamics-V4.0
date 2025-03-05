@@ -37,7 +37,7 @@ const Hero = () => {
         whileInView="headerEnter"
         initial="init"
       >
-        - Full Stack Developer -
+        - full-stack software engineer -
       </motion.div>
 
       <motion.div className="text-6xl text-center text-dark-shade sm:tracking-wide">

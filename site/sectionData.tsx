@@ -4,7 +4,7 @@ import RecentProjects from "../components/RecentProjects";
 
 import WhatIKnow from "../components/WhatIKnow";
 import Bio from "../components/Bio";
-import FindMeOn from "../components/FindMeOn";
+import FindMeOn from "../components/KeyProjects";
 
 import UntilNextTime from "../components/UntilNextTime";
 
