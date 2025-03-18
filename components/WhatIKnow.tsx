@@ -27,7 +27,7 @@ const WhatIKnow = () => {
 
           <div className="flex-row flex items-center gap-2">
             <AiOutlinePython />
-            <p>Python / FastAPI</p>
+            <p>Python / Node.js</p>
           </div>
 
           <div className="flex-row flex items-center gap-2">
@@ -37,7 +37,7 @@ const WhatIKnow = () => {
 
           <div className="flex-row flex items-center gap-2">
             <TbBrandTypescript />
-            <p>TypeScript / Node.js</p>
+            <p>TypeScript / JavaScript</p>
           </div>
 
           <div className="flex-row flex items-center gap-2">
