@@ -3,11 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build && next-image-export-optimizer",
-    "start": "next start",
-    "lint": "next lint",
-    "serve": "npx serve docs"
+  "dev": "next dev",
+  "build": "next build && next-image-export-optimizer",
+  "export": "npm run build && npm run postexport",
+  "postexport": "node ./scripts/post-export.js",
+  "start": "next start",
+  "lint": "next lint",
+  "serve": "npx serve docs"
   },
   "dependencies": {
     "clsx": "^2.1.1",

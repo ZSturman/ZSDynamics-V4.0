@@ -3,6 +3,8 @@ const nextConfig = {
   output: "export",
   distDir: "docs",
   trailingSlash: true,
+  basePath: "/ZSDynamics-V4.0",
+  assetPrefix: "/ZSDynamics-V4.0/",
   images: {
     loader: "custom",
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
@@ -14,7 +16,7 @@ const nextConfig = {
     nextImageExportOptimizer_exportFolderPath: "docs",
     nextImageExportOptimizer_quality: "75",
     nextImageExportOptimizer_storePicturesInWEBP: "true",
-    nextImageExportOptimizer_exportFolderName: "nextImageExportOptimizer",
+    nextImageExportOptimizer_exportFolderName: "static",
     nextImageExportOptimizer_generateAndUseBlurImages: "true",
     nextImageExportOptimizer_remoteImageCacheTTL: "0",
   },
