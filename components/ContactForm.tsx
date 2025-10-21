@@ -66,7 +66,7 @@ const ContactForm = () => {
     const formProps = { ...formData };
 
     try {
-      const response = await fetch("/api/send-mail", {
+      const response = await fetch("https://www.zsdynamics.com/api/send-mail", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
